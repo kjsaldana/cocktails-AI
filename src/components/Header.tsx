@@ -47,8 +47,9 @@ export default function Header() {
                         </Link>
                     </div>
                     <nav className="flex gap-4">
-                        <NavLink to="/" className={({isActive}) => isActive ? 'uppercase text-orange-500 font-bold text-shadow-lg text-xl' : 'uppercase text-white font-bold text-shadow-lg text-xl'}>Home</NavLink>
-                        <NavLink to="/favorites" className={({isActive}) => isActive ? 'uppercase text-orange-500 font-bold text-shadow-lg text-xl' : 'uppercase text-white font-bold text-shadow-lg text-xl'}>Favorites</NavLink>
+                        <NavLink to="/" className={({isActive}) => isActive ? 'uppercase text-orange-500 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Home</NavLink>
+                        <NavLink to="/favorites" className={({isActive}) => isActive ? 'uppercase text-orange-500 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Favorites</NavLink>
+                        <NavLink to="/ai" className={({isActive}) => isActive ? 'uppercase text-orange-500 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>AI Tools</NavLink>
                     </nav>
                 </div>
                 {isHome && (
