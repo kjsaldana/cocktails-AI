@@ -69,14 +69,14 @@ export default function Modal() {
                             <div className='flex justify-between gap-4 mt-5'>
                                 <button
                                     type='button'
-                                    className='bg-gray-600 hover:bg-gray-500 w-full rounded uppercase text-white font-bold p-2 cursor-pointer'
+                                    className='bg-gray-600 hover:bg-gray-500 w-full uppercase text-white font-bold p-2 cursor-pointer rounded-3xl'
                                     onClick={closeModal}
                                 >
                                     Close    
                                 </button>
                                 <button
                                     type='button'
-                                    className={`${favoriteExists(selectedRecipe.idDrink) ? 'bg-red-500 hover:bg-red-400' : 'bg-orange-600 hover:bg-orange-500'} w-full rounded uppercase text-white font-bold p-2 cursor-pointer`}
+                                    className={`${favoriteExists(selectedRecipe.idDrink) ? 'bg-red-500 hover:bg-red-400' : 'bg-orange-500 hover:bg-orange-400'} w-full rounded-3xl uppercase text-white font-bold p-2 cursor-pointer `}
                                     onClick={() => handleClickFavorite(selectedRecipe)}
                                 >
                                     {favoriteExists(selectedRecipe.idDrink) ? 'Remove Favorite' : 'Add to Favorites '}   

@@ -38,8 +38,8 @@ export default function Header() {
     }, [])
 
     return (
-        <header className={isHome ? "bg-[url(/bg.jpg)] bg-center bg-cover" : "bg-slate-800"}>
-            <div className="mx-auto container px-5 py-16">
+        <header className={isHome ? "bg-[url(/bg.jpg)] bg-center bg-cover max-h-170" : "bg-slate-800"}>
+            <div className="mx-auto container px-5 py-8">
                 <div className="flex justify-between items-center">
                     <div>
                         <Link to={'/'}>
@@ -47,13 +47,13 @@ export default function Header() {
                         </Link>
                     </div>
                     <nav className="flex gap-4">
-                        <NavLink to="/" className={({isActive}) => isActive ? 'uppercase text-orange-500 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Home</NavLink>
-                        <NavLink to="/favorites" className={({isActive}) => isActive ? 'uppercase text-orange-500 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Favorites</NavLink>
-                        <NavLink to="/ai" className={({isActive}) => isActive ? 'uppercase text-orange-500 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Cocktail AI</NavLink>
+                        <NavLink to="/" className={({isActive}) => isActive ? 'uppercase text-orange-300 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Home</NavLink>
+                        <NavLink to="/favorites" className={({isActive}) => isActive ? 'uppercase text-orange-300 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Favorites</NavLink>
+                        <NavLink to="/ai" className={({isActive}) => isActive ? 'uppercase text-orange-300 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Cocktail-generator</NavLink>
                     </nav>
                 </div>
                 {isHome && (
-                    <form className="md:w-1/2 2xl:w-1/3 bg-gradient-to-r from-orange-400 to-orange-300 my-32 p-10 rounded-lg shadow space-y-6" onSubmit={handleSubmit}>
+                    <form className="md:w-1/2 2xl:w-1/3 bg-linear-to-r from-orange-400 to-orange-300 my-20 p-10 rounded-lg shadow space-y-6" onSubmit={handleSubmit}>
                         <div className="space-y-4">
                             <label htmlFor="ingredient" className="block text-white uppercase font-extrabold">Name or Ingredients</label>
                             <input
@@ -80,7 +80,7 @@ export default function Header() {
                         <input
                             type="submit"
                             value="Search Recipes"
-                            className="cursor-pointer bg-orange-700 hover:bg-orange-800 text-white font-extrabold p-2 w-full rounded-lg uppercase"
+                            className="cursor-pointer bg-orange-500 hover:bg-orange-600 text-white font-extrabold p-2 w-full rounded-lg uppercase"
                         />
                     </form>
                 )}
