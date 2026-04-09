@@ -10,12 +10,13 @@ export default function GenerateAI() {
         e.preventDefault()
         const form = new FormData(e.currentTarget)
         const prompt = form.get('prompt') as string
+        const cleanPrompt = prompt.trim()
 
         if (prompt.trim() === '') {
             showNotification({text: 'Complete the Form', error: true})
             return
         }
-        generateRecipe(prompt)
+        generateRecipe(cleanPrompt)
     }
   
     return (
