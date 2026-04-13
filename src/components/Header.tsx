@@ -47,13 +47,13 @@ export default function Header() {
                         </Link>
                     </div>
                     <nav className="flex gap-4">
-                        <NavLink to="/" className={({isActive}) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Home</NavLink>
-                        <NavLink to="/favorites" className={({isActive}) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Favorites</NavLink>
-                        <NavLink to="/ai" className={({isActive}) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Cocktail-generator</NavLink>
+                        <NavLink to="/" className={({isActive}) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Home</NavLink>
+                        <NavLink to="/favorites" className={({isActive}) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Favorites</NavLink>
+                        <NavLink to="/ai" className={({isActive}) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Cocktail-generator</NavLink>
                     </nav>
                 </div>
                 {isHome && (
-                    <form className="md:w-1/2 2xl:w-1/3 bg-linear-to-r from-[#ff910b] to-[#ff710b] my-20 p-10 rounded-lg shadow space-y-6" onSubmit={handleSubmit}>
+                    <form className="md:w-130 2xl:w-150 bg-linear-to-r from-[#ff910b] to-[#ff710b] my-20 p-10 rounded-lg shadow space-y-6" onSubmit={handleSubmit}>
                         <div className="space-y-4">
                             <label htmlFor="ingredient" className="block text-white uppercase font-extrabold">Name or Ingredients</label>
                             <input
