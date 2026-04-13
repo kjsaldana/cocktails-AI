@@ -53,7 +53,7 @@ export default function Modal() {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <DialogPanel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6" >
+                            <DialogPanel className="relative transform overflow-hidden bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6" >
                             <DialogTitle as="h3" className="text-gray-900 text-4xl font-extrabold my-5 text-center">
                                 {selectedRecipe.strDrink}
                             </DialogTitle>
@@ -69,14 +69,14 @@ export default function Modal() {
                             <div className='flex justify-between gap-4 mt-5'>
                                 <button
                                     type='button'
-                                    className='bg-gray-600 hover:bg-gray-500 w-full uppercase text-white font-bold p-2 cursor-pointer rounded-3xl'
+                                    className='bg-gray-600 hover:bg-gray-500 w-full uppercase text-white font-bold p-2 cursor-pointer'
                                     onClick={closeModal}
                                 >
                                     Close    
                                 </button>
                                 <button
                                     type='button'
-                                    className={`${favoriteExists(selectedRecipe.idDrink) ? 'bg-red-500 hover:bg-red-400' : 'bg-orange-500 hover:bg-orange-400'} w-full rounded-3xl uppercase text-white font-bold p-2 cursor-pointer `}
+                                    className={`${favoriteExists(selectedRecipe.idDrink) ? 'bg-red-500 hover:bg-red-400' : 'bg-orange-500 hover:bg-orange-400'} w-full uppercase text-white font-bold p-2 cursor-pointer `}
                                     onClick={() => handleClickFavorite(selectedRecipe)}
                                 >
                                     {favoriteExists(selectedRecipe.idDrink) ? 'Remove Favorite' : 'Add to Favorites '}   
