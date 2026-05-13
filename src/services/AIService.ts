@@ -4,7 +4,7 @@ import { openrouter } from '../lib/ai'
 export default {
     async generateRecipe(prompt: string) {
         const result = streamText({
-            model: openrouter('google/gemma-3-4b-it:free'),
+            model: openrouter('google/gemma-4-31b-it:free'),
             // Otros modelos
             // model: openrouter('qwen/qwen3-coder:free'),
             prompt,
