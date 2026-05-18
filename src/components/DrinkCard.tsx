@@ -5,13 +5,17 @@ type DrinkCardProps = {
     drink: DrinkAPIType
 }
 
-export default function DrinkCard({drink}: DrinkCardProps) {
+export default function DrinkCard({ drink }: DrinkCardProps) {
     const selectRecipe = useAppStore((state) => state.selectRecipe)
 
     return (
-        <div className="shadow-lg p-4 rounded-md">
-            <div className="overflow-hidden">
-                <img src={drink.strDrinkThumb} alt={`Image of ${drink.strDrink}`} className="hover:scale-125 hover:rotate-2"/>
+        <div className="bg-white shadow-sm border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
+            <div className="overflow-hidden aspect-square">
+                <img
+                    src={drink.strDrinkThumb}
+                    alt={`Image of ${drink.strDrink}`}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
             </div>
 
             <div>
