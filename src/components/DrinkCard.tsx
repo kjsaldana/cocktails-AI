@@ -18,11 +18,11 @@ export default function DrinkCard({ drink }: DrinkCardProps) {
                 />
             </div>
 
-            <div>
-                <h2 className="mt-5 font-bold text-2xl truncate">{drink.strDrink}</h2>
+            <div className="p-5 flex flex-col grow justify-between gap-4">
+                <h2 className="font-bold text-xl text-gray-800 truncate">{drink.strDrink}</h2>
                 <button
                     type="button"
-                    className="p-2 w-full bg-[#ff910b] hover:brightness-110 uppercase font-extrabold mt-5 cursor-pointer text-white rounded-s"
+                    className="w-full bg-orange-500 hover:bg-orange-600 transition-colors duration-200 font-semibold py-3 px-4 text-white rounded-xl cursor-pointer"
                     onClick={() => selectRecipe(drink.idDrink)}
                 >
                     View Recipe
