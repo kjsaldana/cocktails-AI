@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { useAppStore } from "../store/useAppStore";
 
 export default function Header() {
-    const {pathname} = useLocation()
+    const { pathname } = useLocation()
     const isHome = useMemo(() => pathname === '/', [pathname])
 
     const fetchCategories = useAppStore((state) => state.fetchCategories)
@@ -22,15 +22,15 @@ export default function Header() {
             [e.target.name]: e.target.value
         })
     }
-    
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (Object.values(searchFilters).includes('')) {
-            showNotification({text: 'Complete all the Form', error: true})
+            showNotification({ text: 'Complete all the Form', error: true })
             return
         }
         searchRecipes(searchFilters)
-        showNotification({text: 'Search Complete', error: false})
+        showNotification({ text: 'Search Complete', error: false })
     }
 
     useEffect(() => {
@@ -38,18 +38,21 @@ export default function Header() {
     }, [])
 
     return (
-        <header className={isHome ? "bg-[url(/bg.webp)] bg-center bg-cover max-h-170" : "bg-slate-800"}>
-            <div className="mx-auto container px-5 py-8">
-                <div className="flex justify-between items-center">
+        <header className={`relative ${isHome ? "bg-[url(/bg.webp)] bg-center bg-cover bg-no-repeat min-h-150" : "bg-slate-900"}`}>
+            { }
+            {isHome && <div className="absolute inset-0 bg-black/40 mix-blend-multiply"></div>}
+
+            <div className="mx-auto container px-5 py-8 relative z-10">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                     <div>
                         <Link to={'/'}>
-                            <img className="w-32" src="/logo.svg" alt="Logo cocktail" />
+                            <img className="w-32 transition-transform hover:scale-105 duration-300" src="/logo.svg" alt="Logo cocktail" />
                         </Link>
                     </div>
                     <nav className="flex gap-4">
-                        <NavLink to="/" className={({isActive}) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Home</NavLink>
-                        <NavLink to="/favorites" className={({isActive}) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Favorites</NavLink>
-                        <NavLink to="/ai" className={({isActive}) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Cocktail-generator</NavLink>
+                        <NavLink to="/" className={({ isActive }) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Home</NavLink>
+                        <NavLink to="/favorites" className={({ isActive }) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Favorites</NavLink>
+                        <NavLink to="/ai" className={({ isActive }) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Cocktail-generator</NavLink>
                     </nav>
                 </div>
                 {isHome && (
