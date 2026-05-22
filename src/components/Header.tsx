@@ -49,10 +49,31 @@ export default function Header() {
                             <img className="w-32 transition-transform hover:scale-105 duration-300" src="/logo.svg" alt="Logo cocktail" />
                         </Link>
                     </div>
-                    <nav className="flex gap-4">
-                        <NavLink to="/" className={({ isActive }) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Home</NavLink>
-                        <NavLink to="/favorites" className={({ isActive }) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Favorites</NavLink>
-                        <NavLink to="/ai" className={({ isActive }) => isActive ? 'uppercase text-orange-400 font-bold text-shadow-lg text-lg border-b-4' : 'uppercase text-white font-bold text-shadow-lg text-lg'}>Cocktail-generator</NavLink>
+                    <nav className="flex gap-6 md:gap-8">
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                `uppercase text-sm tracking-widest font-semibold transition-all duration-300 ${isActive ? 'text-orange-400 underline decoration-2 underline-offset-8' : 'text-white/80 hover:text-white hover:underline decoration-2 underline-offset-8 decoration-white/30'}`
+                            }
+                        >
+                            Home
+                        </NavLink>
+                        <NavLink
+                            to="/favorites"
+                            className={({ isActive }) =>
+                                `uppercase text-sm tracking-widest font-semibold transition-all duration-300 ${isActive ? 'text-orange-400 underline decoration-2 underline-offset-8' : 'text-white/80 hover:text-white hover:underline decoration-2 underline-offset-8 decoration-white/30'}`
+                            }
+                        >
+                            Favorites
+                        </NavLink>
+                        <NavLink
+                            to="/ai"
+                            className={({ isActive }) =>
+                                `uppercase text-sm tracking-widest font-semibold transition-all duration-300 ${isActive ? 'text-orange-400 underline decoration-2 underline-offset-8' : 'text-white/80 hover:text-white hover:underline decoration-2 underline-offset-8 decoration-white/30'}`
+                            }
+                        >
+                            Cocktail-generator
+                        </NavLink>
                     </nav>
                 </div>
                 {isHome && (
