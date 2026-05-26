@@ -96,21 +96,32 @@ export default function Header() {
                             />
                         </div>
 
-                        <div className="space-y-4">
-                            <label htmlFor="category" className="block text-white uppercase font-extrabold">Categories</label>
-                            <select name="category" id="category" className="bg-white p-2 w-full outline-none rounded-lg" onChange={handleChange} value={searchFilters.category}>
+                        <div className="space-y-2">
+                            <label htmlFor="category" className="block text-white text-sm font-bold tracking-wider uppercase">
+                                Categories
+                            </label>
+                            <select
+                                name="category"
+                                id="category"
+                                className="w-full bg-white/95 focus:bg-white text-gray-900 p-4 rounded-xl outline-none focus:ring-4 focus:ring-orange-300/50 transition-all shadow-inner cursor-pointer"
+                                onChange={handleChange}
+                                value={searchFilters.category}
+                            >
                                 <option value="">-- Select a Category --</option>
                                 {categories.drinks.map(category => (
-                                    <option value={category.strCategory} key={category.strCategory}>{category.strCategory}</option>
+                                    <option value={category.strCategory} key={category.strCategory}>
+                                        {category.strCategory}
+                                    </option>
                                 ))}
                             </select>
                         </div>
 
-                        <input
+                        <button
                             type="submit"
-                            value="Search Recipes"
-                            className="cursor-pointer bg-[#1a1a1a] hover:brightness-150 text-white font-extrabold p-2 w-full rounded-lg uppercase"
-                        />
+                            className="w-full bg-gray-900 hover:bg-black text-white font-bold text-lg py-4 rounded-xl uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer mt-4"
+                        >
+                            Search Recipes
+                        </button>
                     </form>
                 )}
             </div>
