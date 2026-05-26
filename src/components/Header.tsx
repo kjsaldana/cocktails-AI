@@ -77,15 +77,20 @@ export default function Header() {
                     </nav>
                 </div>
                 {isHome && (
-                    <form className="md:w-130 2xl:w-150 bg-linear-to-r from-[#ff910b] to-[#ff710b] my-20 p-10 rounded-lg shadow space-y-6" onSubmit={handleSubmit}>
-                        <div className="space-y-4">
-                            <label htmlFor="ingredient" className="block text-white uppercase font-extrabold">Name or Ingredients</label>
+                    <form
+                        className="w-full max-w-md lg:max-w-lg bg-linear-to-br can be written as `bg-linear-to-br` from-orange-500 to-orange-600 my-16 md:my-24 p-8 sm:p-10 rounded-3xl shadow-2xl space-y-6"
+                        onSubmit={handleSubmit}
+                    >
+                        <div className="space-y-2">
+                            <label htmlFor="ingredient" className="block text-white text-sm font-bold tracking-wider uppercase">
+                                Name or Ingredients
+                            </label>
                             <input
                                 id="ingredient"
                                 name="ingredient"
                                 type="text"
-                                placeholder="E.g. Vodka, Tequila, Coffee."
-                                className="bg-white p-2 w-full outline-none rounded-lg"
+                                placeholder="E.g. Vodka, Tequila, Coffee..."
+                                className="w-full bg-white/95 focus:bg-white text-gray-900 placeholder-gray-400 p-4 rounded-xl outline-none focus:ring-4 focus:ring-orange-300/50 transition-all shadow-inner"
                                 onChange={handleChange}
                                 value={searchFilters.ingredient}
                             />
