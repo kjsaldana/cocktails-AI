@@ -48,7 +48,7 @@ Esta arquitectura demuestra la capacidad de integrar múltiples fuentes de verda
 
 ---
 
-## Stack Tecnológico y Justificación de Arquitectura
+## Stack Tecnológico
 
 Cada librería fue seleccionada para resolver una necesidad específica del flujo de datos y la experiencia de usuario:
 
